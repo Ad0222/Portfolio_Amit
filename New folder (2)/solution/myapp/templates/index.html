@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Amit Nagar's personal portfolio. Showcasing skills, projects, and contact information.">
+  <meta name="keywords" content="Amit Nagar, Portfolio, Web Developer, Python, Projects, GrowSphere, FarmFresh">
+  <meta name="author" content="Amit Nagar">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-800 font-sans">
+  <!-- Header -->
+
+  <header class="fixed top-0 left-0 w-full z-50 bg-gray-900 text-white shadow">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold">Portfolio</h1>
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="#Home" class="hover:text-blue-400">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-400">About</a></li>
+          <li><a href="#Profile" class="hover:text-blue-400">Profile</a></li>
+          <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+          <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="Home" class="bg-gray-900 text-white py-20">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+  
+      <!-- Left: Name & Title -->
+      <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+        <h2 class="text-5xl font-bold mb-4">Hi, I'm Amit</h2>
+        <p class="text-xl">Web Developer • Python Enthusiast • Tech Lover</p>
+      </div>
+  
+      <!-- Right: Circular Image + Resume Button -->
+      <div class="md:w-1/2 flex flex-col items-center gap-4">
+        {% for item in myitems %}
+        <img 
+          src="{{ item.image.url }}" alt="{{ item.name }}"
+          class="w-60 h-60 object-cover rounded-full border-4 border-white shadow-lg"/>
+              {% endfor %}
+       <a href="Amit-Nagar.pdf" download
+           class="mt-4 bg-white text-blue-600 font-semibold px-6 py-2 rounded-lg shadow hover:bg-gray-100 transition">
+          📄 Download Resume
+        </a>
+      </div>
+  
+    </div>
+  </section>
+
+  <!-- About Section -->
+
+<section id="about" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+      <!-- Left: Image -->
+      <div class="md:w-1/2 flex justify-center mb-10 md:mb-0">
+        {% for item in myitems %}
+        <img
+          src="{{ item.image.url }}" alt="{{ item.name }}"
+          class="w-48 h-48 object-cover rounded-full border-4 border-blue-600 shadow-lg"/>
+               {% endfor %}
+      </div>
+
+
+  <!-- Right: Text Content -->
+  <div class="md:w-1/2 text-center md:text-left">
+    <h2 class="text-3xl font-semibold text-white mb-6">About Me</h2>
+    <p class="text-lg leading-relaxed text-white">
+    Passionate about building and engineering innovative solutions. A quick learner and collaborative team player, eager to grow by embracing new technologies. Committed to contributing my skills, energy, and drive to a dynamic and forward-thinking team.
+    </p>
+  </div>
+</div>
+  </section>
+
+
+
+<!-- Coding Profiles Section -->
+<section id="Profile" class="bg-gray-900 text-white py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-3xl font-semibold text-center mb-10"><strong>Problem Solving
+      </strong></h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- GeeksForGeeks -->
+        <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+          <div class="text-cyan-400 text-4xl mb-4">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-400">GeeksForGeeks</h3>
+          <p class="mt-4 font-semibold text-white">
+            450+ problems solved <br />
+            Top ranker at GFG Institute Rank
+          </p>
+          <a href="https://www.geeksforgeeks.org/user/dhakadajycv/" class="inline-block mt-6 px-6 py-2 rounded-full bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition">
+            View profile
+          </a>
+        </div>
+  
+        <!-- LeetCode -->
+        <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+          <div class="text-cyan-400 text-4xl mb-4">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-400">LeetCode</h3>
+          <p class="mt-4 font-semibold text-gray-300">
+            250+ problems solved <br />
+            1532 contest rating on leetcode
+          </p>
+          <a href="https://leetcode.com/u/Amit1208/" class="inline-block mt-6 px-6 py-2 rounded-full bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition">
+            View profile
+          </a>
+        </div>
+  
+        <!-- GitHub -->
+        <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+          <div class="text-cyan-400 text-4xl mb-4">
+            <i class="fab fa-github"></i>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-400">GitHub</h3>
+          <p class="mt-4 font-semibold text-gray-300">
+            15+ outstanding projects <br />
+            on Frontend Development
+          </p>
+          <a href="https://github.com/Ad0222" class="inline-block mt-6 px-6 py-2 rounded-full bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition">
+            View profile
+          </a>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+
+ <!-- Skills Section -->
+
+<section id="skills" class="py-20 px-4 bg-gray-900">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+        <!-- Left: Skills Content -->
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+            <h2 class="text-3xl font-semibold text-white mb-6">Skills</h2>
+            <ul class="list-disc text-lg leading-relaxed text-white">
+                <li>Web Development: HTML, CSS</li>
+                <li>Backend Development: Python, Django</li>
+                <li>Databases: MySQL</li>
+                <li>Version Control: Git, GitHub</li>
+                <li>Problem Solving: Data Structures, Algorithms</li>
+            </ul>
+        </div>
+
+
+    <!-- Right: Image inside a Box -->
+    <div class="md:w-1/2 flex justify-center">
+        <div class="rounded-xl p-4 flex justify-center items-center">
+          {% for item in myitems %}
+            <img
+               src="{{ item.image1.url }}" alt="{{ item.name }}"
+                class="w-full h-full object-cover rounded-xl"
+            />
+             {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+</section>
+
+  <!-- Projects Section -->
+
+  <section id="projects" class="bg-gray-900 text-white py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-semibold text-center mb-10">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- GeeksForGeeks -->
+        <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+          <div class="text-cyan-400 text-4xl mb-4">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-400">RGPV AutoBot</h3>
+          <p class="mt-4 font-semibold text-white">
+            Automation bot for RGPV result retrieval to save time and reduce errors, workload and ensuring data accuracy.<br />
+          </p>
+        </div>
+  
+
+        <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+            <div class="text-cyan-400 text-4xl mb-4">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="text-xl font-bold text-cyan-400">GrowSphere</h3>
+            <p class="mt-4 font-semibold text-white">
+                GrowSphere promotes sustainability, increases productivity, conserves resources, and ensures a healthier environment for current and future generations.<br />
+            </p>
+          </div>
+
+          <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+            <div class="text-cyan-400 text-4xl mb-4">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="text-xl font-bold text-cyan-400">𝐅𝐚𝐫𝐦𝐅𝐫𝐞𝐬𝐡</h3>
+            <p class="mt-4 font-semibold text-white">
+                A farm-based web application that helps connect farmers to customer directly by display vegetables for consumers and facilitating orders directly.<br />
+            </p>
+          </div>
+        <!-- GitHub -->
+  </section>
+
+  <!-- Contact Section -->
+    <section id="contact" class="bg-gray-900 text-white py-20 px-4">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10">Contact Me</h2>
+    <form class="space-y-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input type="text" placeholder="Full Name" class="bg-gray-800 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+        <input type="email" placeholder="Email address" class="bg-gray-800 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+      </div>
+ 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input type="tel" placeholder="Mobile Number" class="bg-gray-800 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+        <input type="text" placeholder="Email Subject" class="bg-gray-800 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+      </div>
+     
+      <textarea rows="6" placeholder="Your Message" class="bg-gray-800 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
+      
+     
+      <div class="text-center pt-4">
+        <button type="submit" class="bg-cyan-400 text-black px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-cyan-300 transition focus:outline-none focus:ring-4 focus:ring-cyan-500">
+          Let's Collaborate
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+  <!-- Footer -->
+
+  <footer class="bg-gray-900 text-white text-center py-4">
+    <p>&copy; 2025 by Amit Nagar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const responseDiv = document.getElementById('responseMessage');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+  
+      const data = { name, email, message };
+  
+      try {
+        const response = await fetch('/api/contact/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken(),
+          },
+          body: JSON.stringify(data),
+        });
+  
+        const result = await response.json();
+  
+        if (response.ok) {
+          responseDiv.textContent = result.message;
+          responseDiv.classList.remove('hidden');
+          form.reset();
+        } else {
+          alert(result.error || 'Something went wrong.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('sending message succesfully');
+      }
+    });
+  
+    // Helper to get CSRF token from cookies
+    function getCSRFToken() {
+      const name = 'csrftoken';
+      const cookies = document.cookie.split(';');
+      for (let cookie of cookies) {
+        if (cookie.trim().startsWith(name + '=')) {
+          return decodeURIComponent(cookie.trim().split('=')[1]);
+        }
+      }
+      return '';
+    }
+  </script>
+
+</body>
+</html>
